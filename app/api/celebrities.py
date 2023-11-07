@@ -30,7 +30,7 @@ async def get_shedule_by_celebrity_id(
     celebrity_service: ICelebrityService = Depends(),
     transaction_manager: ITransactionManager = Depends(),
 ):
-    existed_celebrities = await celebrity_service.get_schedule_by_celebrity_id(
+    celebrity_schedule = await celebrity_service.get_schedule_by_celebrity_id(
         celebrity_id, transaction_manager
     )
-    return existed_celebrities
+    return celebrity_schedule
